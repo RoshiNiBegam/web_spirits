@@ -1,3 +1,5 @@
+Driver Drowsines Detection using Mediapipe in Python
+
 This code implements a drowsiness detection system using facial landmarks. It utilizes the MediaPipe FaceMesh model to detect facial landmarks and calculates the Eye Aspect Ratio (EAR) to determine if a person is drowsy. If the EAR falls below a certain threshold for a specified duration, an alarm is triggered. Additionally, it incorporates the functionality to play a custom audio notification when drowsiness is detected.
 
 Detailed README Description:
