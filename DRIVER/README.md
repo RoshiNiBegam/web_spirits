@@ -1,25 +1,26 @@
-# Driver Drowsines Detection using Mediapipe in Python
+This code implements a drowsiness detection system using facial landmarks. It utilizes the MediaPipe FaceMesh model to detect facial landmarks and calculates the Eye Aspect Ratio (EAR) to determine if a person is drowsy. If the EAR falls below a certain threshold for a specified duration, an alarm is triggered. Additionally, it incorporates the functionality to play a custom audio notification when drowsiness is detected.
 
-**This repository contains code for the blog post [Driver Drowsines Detection using Mediapipe in Python](https://learnopencv.com/driver-drowsiness-detection-using-mediapipe-in-python/)**.
+Detailed README Description:
+The provided code consists of two main components: VideoFrameHandler and AudioFrameHandler, which collectively form a drowsiness detection system.
 
-In this post, we will:
-
-* Learn how to detect eye landmarks using the Mediapipe Face Mesh solution pipeline in python.
-* Introduce and demonstrate the Eye Aspect Ratio (EAR) technique.
-* Create a Drowsiness Detection web application using streamlit.
-* Use streamlit-webrtc to help transmit real-time video/audio streams over the network.
-* Deploy it on a cloud service.
-
-[<img src="https://learnopencv.com/wp-content/uploads/2022/07/download-button-e1657285155454.png" alt="download" width="200">](https://www.dropbox.com/scl/fo/5uqodfo3b668xbtqzqqt0/h?dl=1&rlkey=cb2gkzoeobpvyv74299rbdg8c)
-
-<img src = 'app_image/page_SS.jpg'>
-
-# AI Courses by OpenCV
-
-Want to become an expert in AI? [AI Courses by OpenCV](https://opencv.org/courses/) is a great place to start.
-
-<a href="https://opencv.org/courses/">
-<p align="center">
-<img src="https://learnopencv.com/wp-content/uploads/2023/01/AI-Courses-By-OpenCV-Github.png">
-</p>
-</a>
+VideoFrameHandler:
+Utilizes the MediaPipe FaceMesh model to detect facial landmarks.
+Calculates the Eye Aspect Ratio (EAR) based on the position of specific landmarks for both eyes.
+Monitors the EAR values over time to determine drowsiness.
+If the EAR falls below a specified threshold for a predefined duration (WAIT_TIME), it triggers an alarm indicating drowsiness.
+Provides visual feedback by plotting facial landmarks and textual information on the video frame.
+AudioFrameHandler:
+Handles the playback of custom audio notifications based on drowsiness detection.
+Prepares the custom audio file and segments it into smaller chunks based on the duration of each audio frame.
+Utilizes PyAV library to process audio frames and play the custom audio segments when triggered.
+Provides functionality to dampen audio frames to simulate silence when no notification is required.
+Usage:
+Requirements:
+"Python, OpenCV, NumPy, Mediapipe, PyAV, PyDub".
+Setup:
+Ensure the required libraries are installed 
+"(pip install -r requirements.txt)"
+Configuration: 
+Adjust the thresholds (EAR_THRESH, WAIT_TIME) in the code as needed.
+Execution:
+Run the main script, passing the video file or camera input as an argument.
